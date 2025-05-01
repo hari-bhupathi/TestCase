@@ -2,6 +2,22 @@ import "./styles.css";
 import { useEffect, useReducer, useState } from "react";
 import { Button, Card, CardContent, TextField, Typography, Box } from "@mui/material";
 import usersData from "./data";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({  
+  root: {
+    textAlign: "center",
+    marginTop: "50px"
+  },
+  intial_input:{
+    marginBottom: "10px !important" 
+  },
+  text_filed:{
+    marginBottom: "30px !important "
+  }
+  
+});
+
 
 type User = {
   id: number;
@@ -108,6 +124,10 @@ function reducer(state: CountState, action: Action): CountState {
 
 
 export default function App() {
+
+  const classes = useStyles();
+
+
   const [users, setUsers] = useState<SimplifiedUser[]>([]);
   const [removedUsers, setRemovedUsers] = useState<SimplifiedUser[]>([]);
   const [searchText, setSearchText] = useState<string>("");
@@ -159,7 +179,8 @@ export default function App() {
         label="Decrease by"
         value={numberInput}
         onChange={(e) => setNumberInput(Number(e.target.value))}
-        style={{ marginBottom: 10 }}
+        className={classes.intial_input }
+        
       />
       <Box display="flex" gap={1} justifyContent="center" mb={4}>
         <Button variant="contained" onClick={() => dispatch({ type: "decrementBy", payload: numberInput })}>-</Button>
@@ -174,7 +195,8 @@ export default function App() {
       <TextField
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
-        style={{ marginBottom: 30 }}
+        className={classes.text_filed}
+        
       />
 
       {displayedUsers.map(user => (
