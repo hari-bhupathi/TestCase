@@ -134,6 +134,7 @@ export default function App() {
 
   const isRemoved = (user: SimplifiedUser) => removedUsers.some(u => u.id === user.id);
 
+  
   const removeUser = (id: string) => {
     const toRemove = users.find(u => u.id === id);
     if (toRemove) {
