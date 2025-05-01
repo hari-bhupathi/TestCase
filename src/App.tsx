@@ -77,7 +77,7 @@ function reducer(state: CountState, action: Action): CountState {
 }
 
 
-/** Instructions
+/** Instructions :
    0. Fork this codesandbox and sync it with your github 
    1. import users data from data.ts
    1.1. Utilize TypeScript in your implementation
@@ -134,7 +134,7 @@ export default function App() {
 
   const isRemoved = (user: SimplifiedUser) => removedUsers.some(u => u.id === user.id);
 
-  
+
   const removeUser = (id: string) => {
     const toRemove = users.find(u => u.id === id);
     if (toRemove) {
