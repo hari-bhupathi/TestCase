@@ -244,6 +244,5 @@ const users = [
 
 export default users;
 
-const sampOjb=[10]
-  
 
+const sampOjb=[1]
